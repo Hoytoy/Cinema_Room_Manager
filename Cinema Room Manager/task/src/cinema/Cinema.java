@@ -10,7 +10,6 @@ public class Cinema {
         int rows = scanner.nextInt();
         System.out.println("Enter the number of seats in each row:");
         int seatsPerRow = scanner.nextInt();
-        scanner.close();
         System.out.println();
 
         new CinemaHall(rows, seatsPerRow);
@@ -81,7 +80,8 @@ class CinemaHall {
     }
 
     public static void printHall() {
-        System.out.print("Cinema:\n  ");
+        System.out.println();
+        System.out.println("Cinema:");
         for (int i = 1; i <= hall[0].length; i++) {
             System.out.print(i + " ");
         }
@@ -97,6 +97,7 @@ class CinemaHall {
     }
 
     public static void buyTicket() {
+        System.out.println();
         int rowNumber;
         int seatNumber;
         boolean availableSeat = false;
@@ -107,7 +108,6 @@ class CinemaHall {
             rowNumber = scanner.nextInt();
             System.out.println("Enter a seat number in that row:");
             seatNumber = scanner.nextInt();
-            scanner.close();
 
             if (rowNumber < 1 || rowNumber > rows || seatNumber < 1 || seatNumber > seatsPerRow) {
                 System.out.println("Wrong input!\n");
@@ -142,6 +142,7 @@ class CinemaHall {
                 occupiedPercentage * 100,
                 currentIncome,
                 totalIncome);
+        System.out.println();
     }
 
     public static int calculateTotalIncome() {
